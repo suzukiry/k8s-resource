@@ -22,7 +22,7 @@ public class ConsumerAPI {
 
         Properties props = new Properties();
 //        props.setProperty(ConsumerConfig.BOOTSTRAP_SERVERS_CONFIG, "my-cluster-kafka-bootstrap-myproject.apps.jscholz.rhmw-integrations.net:443");
-        props.setProperty(ConsumerConfig.BOOTSTRAP_SERVERS_CONFIG, "routes-cluster-kafka-bootstrap-kafka-routes.apps.cluster-6fqb6.6fqb6.sandbox1092.opentlc.com:443");
+        props.setProperty(ConsumerConfig.BOOTSTRAP_SERVERS_CONFIG, "routes-cluster-kafka-bootstrap-kafka-routes.apps.cluster-5739.5739.sandbox1138.opentlc.com:443");
 
         props.setProperty(ConsumerConfig.GROUP_ID_CONFIG, "external-group");
         props.setProperty(ConsumerConfig.ENABLE_AUTO_COMMIT_CONFIG, "true");
@@ -32,11 +32,13 @@ public class ConsumerAPI {
         props.setProperty(ConsumerConfig.VALUE_DESERIALIZER_CLASS_CONFIG, "org.apache.kafka.common.serialization.StringDeserializer");
 
         props.setProperty(CommonClientConfigs.SECURITY_PROTOCOL_CONFIG, "SSL");
-        props.setProperty(SslConfigs.SSL_TRUSTSTORE_LOCATION_CONFIG, "./cluster.p12");
-        props.setProperty(SslConfigs.SSL_TRUSTSTORE_PASSWORD_CONFIG, "s4Lhg6GU2QeC");
+        props.setProperty(SslConfigs.SSL_TRUSTSTORE_LOCATION_CONFIG, "/Users/rsuzuki/lab/project/k8s-resource/produer-consumer/kafka.clienttruststore.jks");
+        props.setProperty(SslConfigs.SSL_TRUSTSTORE_LOCATION_CONFIG, "/Users/rsuzuki/lab/project/k8s-resource/produer-consumer/ca.p12");
+        //props.setProperty(SslConfigs.SSL_TRUSTSTORE_PASSWORD_CONFIG, "password");
+        props.setProperty(SslConfigs.SSL_TRUSTSTORE_PASSWORD_CONFIG, "dFq8UCaM3KfK");
         props.setProperty(SslConfigs.SSL_TRUSTSTORE_TYPE_CONFIG, "PKCS12");
 //        props.setProperty(SslConfigs.SSL_KEYSTORE_LOCATION_CONFIG, "../user.p12");
-//        props.setProperty(SslConfigs.SSL_KEYSTORE_PASSWORD_CONFIG, "gIY4dACpwpbz");
+//        props.setProperty(SslConfigs.SSL_KEYSTORE_PASSWORD_CONFIG, "lBkJBN6ahtN0");
 //        props.setProperty(SslConfigs.SSL_KEYSTORE_TYPE_CONFIG, "PKCS12");
         props.put(SslConfigs.SSL_ENDPOINT_IDENTIFICATION_ALGORITHM_CONFIG, "HTTPS");
 
